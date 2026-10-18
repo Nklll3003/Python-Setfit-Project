@@ -1,0 +1,37 @@
+========================================================================
+SetFit on Financial PhraseBank (sentences_allagree, positive vs negative)
+========================================================================
+Run time      : 2026-10-18 16:10:33
+Python        : 3.10.11
+setfit        : 1.0.3
+transformers  : 4.36.2
+torch         : 2.14.1+cpu
+
+All sentences : {'neutral': 1391, 'positive': 570, 'negative': 303}
+Binary subset : 873 sentences (570 positive / 303 negative), neutral left out
+Training set  : 8 positive + 8 negative, new random sample for each split, drawn from a pool of 573 sentences
+Test set      : 300 sentences (150 per class), fixed for all splits (seed 42)
+Splits        : 10 (seeds 0 to 9)
+Settings      : batch_size=8, num_iterations=10, num_epochs=1
+
+========================================================================
+RESULT PER SPLIT (%)
+========================================================================
+  seed 0  : accuracy 95.3   macro-F1 95.3
+  seed 1  : accuracy 95.3   macro-F1 95.3
+  seed 2  : accuracy 95.0   macro-F1 95.0
+  seed 3  : accuracy 96.0   macro-F1 96.0
+  seed 4  : accuracy 95.3   macro-F1 95.3
+  seed 5  : accuracy 94.3   macro-F1 94.3
+  seed 6  : accuracy 94.3   macro-F1 94.3
+  seed 7  : accuracy 95.3   macro-F1 95.3
+  seed 8  : accuracy 95.7   macro-F1 95.7
+  seed 9  : accuracy 95.7   macro-F1 95.7
+
+========================================================================
+SUMMARY
+========================================================================
+Accuracy : 95.2 +/- 0.5   (mean +/- standard deviation, min 94.3, max 96.0)
+Macro-F1 : 95.2 +/- 0.5
+Baseline : 50.0 (always guessing one class on a balanced test set)
+

@@ -1,0 +1,37 @@
+========================================================================
+SetFit on the Spotify review dataset: results over several random splits
+========================================================================
+Run time      : 2026-10-18 15:13:18
+Python        : 3.10.11
+setfit        : 1.0.3
+transformers  : 4.36.2
+torch         : 2.14.1+cpu
+
+Data file     : spotify_reviews_labeled_VERIFIED.csv
+Labelled      : 304 reviews (95 positive / 209 negative), 69 excluded
+Training set  : 8 positive + 8 negative, new random sample for each split, drawn from a pool of 214 reviews
+Test set      : 90 reviews (45 per class), fixed for all splits (seed 42)
+Splits        : 10 (seeds 0 to 9)
+Settings      : batch_size=8, num_iterations=10, num_epochs=1
+
+========================================================================
+RESULT PER SPLIT (%)
+========================================================================
+  seed 0  : accuracy 93.3   macro-F1 93.3
+  seed 1  : accuracy 91.1   macro-F1 91.1
+  seed 2  : accuracy 93.3   macro-F1 93.3
+  seed 3  : accuracy 93.3   macro-F1 93.3
+  seed 4  : accuracy 88.9   macro-F1 88.9
+  seed 5  : accuracy 93.3   macro-F1 93.3
+  seed 6  : accuracy 93.3   macro-F1 93.3
+  seed 7  : accuracy 91.1   macro-F1 91.1
+  seed 8  : accuracy 93.3   macro-F1 93.3
+  seed 9  : accuracy 94.4   macro-F1 94.4
+
+========================================================================
+SUMMARY
+========================================================================
+Accuracy : 92.6 +/- 1.7   (mean +/- standard deviation, min 88.9, max 94.4)
+Macro-F1 : 92.5 +/- 1.7
+Baseline : 50.0 (always guessing one class on a balanced test set)
+

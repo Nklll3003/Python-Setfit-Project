@@ -1,0 +1,31 @@
+========================================================================
+1. FIRST PASS vs SECOND PASS (all reviews)
+========================================================================
+Reviews                : 373
+Raw agreement          : 93.6%  (349/373)
+Cohen's kappa (3 classes: positive / negative / exclude) : 0.887
+
+              2nd positive  2nd negative   2nd exclude
+1st positive            95             0             9
+1st negative             0           209             8
+ 1st exclude             2             5            45
+
+Reviews labelled positive or negative in both passes: 304
+  agreement : 100.0%
+
+Final labels: a label is kept only when both passes agree on positive or
+negative. Every other review is excluded as ambiguous.
+  positive 95 | negative 209 | excluded 69
+
+========================================================================
+2. YOUR LABELS vs FINAL LABELS (sample)
+========================================================================
+Reviews labelled by you : 18
+Raw agreement           : 100.0%
+Cohen's kappa           : 1.000
+
+              2nd positive  2nd negative   2nd exclude
+1st positive             3             0             0
+1st negative             0            15             0
+ 1st exclude             0             0             0
+(rows = your label, columns = final label)

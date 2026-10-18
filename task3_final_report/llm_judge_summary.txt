@@ -1,0 +1,25 @@
+========================================================================
+LLM-AS-JUDGE CHECK OF SETFIT ERRORS (Spotify, first single run)
+========================================================================
+Misclassified reviews judged : 19
+
+claude:
+  ambiguous                                         : 10  (53%)
+  clear error (judge agrees with draft label)       :  9  (47%)
+chatgpt:
+  clear error (judge agrees with draft label)       : 14  (74%)
+  ambiguous                                         :  5  (26%)
+
+Claude vs ChatGPT agreement : 12/19 (63.2%)
+Cohen's kappa (3 classes)   : 0.464
+Both picked a side          : 8 reviews, agree on 8
+Ambiguous by both judges    : 4
+Ambiguous by at least one   : 11
+
+Claude (rows) vs ChatGPT (columns):
+chatgpt    ambiguous  negative  positive
+claude                                  
+ambiguous          4         3         3
+negative           0         4         0
+positive           1         0         4
+
