@@ -1,0 +1,94 @@
+========================================================================
+SetFit on the new constructed dataset (Spotify reviews)
+========================================================================
+Run time  : 2026-10-09 19:39:00
+Data file : spotify_reviews_labeled_DRAFT.csv
+
+========================================================================
+1. DATASET
+========================================================================
+Reviews in file            : 373
+Usable labelled reviews    : 321  (104 positive / 217 negative)
+Train set (few-shot)       : 16  (8 positive / 8 negative)
+Test set (class-balanced)  : 192  (96 positive / 96 negative)
+Unused labelled reviews    : 113
+Random seed                : 42
+
+========================================================================
+2. MODEL
+========================================================================
+Base model  : sentence-transformers/paraphrase-mpnet-base-v2
+Settings    : batch_size=8, num_iterations=10, num_epochs=1
+
+========================================================================
+3. RESULTS ON THE NEW DATASET
+========================================================================
+Accuracy : 0.9010  (173/192 correct)
+Baseline: 0.5000  (always guessing one class on this balanced test set)
+
+Confusion matrix (rows = true label, columns = predicted label)
+
+                    pred negative   pred positive
+  true negative                89               7
+  true positive                12              84
+
+Per-class scores
+
+              precision    recall  f1-score   support
+
+    negative      0.881     0.927     0.904        96
+    positive      0.923     0.875     0.898        96
+
+    accuracy                          0.901       192
+   macro avg      0.902     0.901     0.901       192
+weighted avg      0.902     0.901     0.901       192
+
+
+========================================================================
+4. ERROR SUMMARY
+========================================================================
+Misclassified reviews : 19 of 192  (9.9%)
+  positive predicted as negative : 12
+  negative predicted as positive : 7
+
+Star rating of the mistakes (shows where stars and text disagree)
+  1 star : 4
+  2 star : 3
+  4 star : 8
+  5 star : 4
+
+========================================================================
+5. ALL MISCLASSIFIED REVIEWS
+========================================================================
+
+TRUE POSITIVE, PREDICTED NEGATIVE  (12)
+------------------------------------------------------------------------
+ 1. [5 star] yes it's awesome to enjoy the songs. But not possible recording songs through bluetooth earbuds. is there any settings in the present Spotify app.
+ 2. [4 star] I enjoy the app. my only complaint is when you want to hear your playlist on random it should really play music in a different order every time.
+ 3. [4 star] fav music platform, but today I had issues with sound where sometimes my left or right bud/speaker wasn't playing music at all in songs where an instrument plays in 1 ...
+ 4. [4 star] Very nice app, a bit laggy and irresponsive at times however. Also price is climbing fast
+ 5. [5 star] Spotify is lit but there are some songs I can't seem to find in it
+ 6. [5 star] I personally love this app, only downfall is since I don't have premium I can only go through 3 songs before an AD plays but the AD is always like 4 of them together u...
+ 7. [4 star] love the selection! only problem is, that I have thousands of songs saved and when I use shuffle on my saved songs playlist, it seems to play the same few 100 songs ov...
+ 8. [4 star] best music streaming I've used. onlt problem I've had is that when I switch from my car to my headphones or computer at work or home, "shuffle" restarts from where it ...
+ 9. [5 star] phone off sill playing
+10. [4 star] honestly i love the app but i think adding to queue shouldn't be in premium. My home screen won't refresh. idk if it's my Internet malfunctioning or it's the app. b
+11. [4 star] Great app for discovering new songs, and wide variety of the retro too. Only problem is a bug that forces you to connect to the internet so that the app can load the s...
+12. [4 star] I love and all I just don't like how many ads I got after I have been on the app for about a year like one time I had 6 ads.
+
+TRUE NEGATIVE, PREDICTED POSITIVE  (7)
+------------------------------------------------------------------------
+ 1. [1 star] only for premium
+ 2. [2 star] useless without a subscription, the algorithm for finding songs and identifying your taste is good though
+ 3. [1 star] it is some money earning platform
+ 4. [1 star] because,again again it's saying for premium membership 😡
+ 5. [1 star] advertising on premium
+ 6. [2 star] would have been great if for the past weeks my spotify has been stuck in offline mode. Sure I pay for premium so I can listen to it, but only what I downloaded. Any ne...
+ 7. [2 star] loved it for many years. Always had great music options. loved the audio books, podcasts and even the workout options. I loved it so much so that I would always give a...
+
+========================================================================
+6. OUTPUT FILES
+========================================================================
+  spotify_experiment_results.txt       this report
+  spotify_experiment_errors.csv        the 19 misclassified reviews
+  spotify_experiment_predictions.csv   prediction for every test review

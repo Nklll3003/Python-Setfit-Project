@@ -1,0 +1,41 @@
+Nattapon Pronsukwitoon, student ID 48995940
+
+STEP 0: SETUP (every time you open a new PowerShell window)
+Commands:
+E:\Python-Setfit-Project\venv\Scripts\Activate.ps1
+cd N:\1.Sem.3\8240
+
+
+STEP 1: setfit_customer_reviews_feasibility.py
+Command:
+python setfit_customer_reviews_feasibility.py
+What it does: trains SetFit on 16 examples from the Customer Reviews dataset.
+Output: customer_reviews_feasibility_results.txt
+
+
+STEP 2: collect_spotify_reviews.py
+Command:
+python collect_spotify_reviews.py
+What it does: collects 500 Spotify reviews from Google Play and cleans them down to 373.
+Output:
+  spotify_reviews_raw.csv        (373 reviews, empty "label" column)
+  spotify_collection_log.txt     (counts from each cleaning step)
+Warning: do NOT re-run once labelling has started. It fetches new reviews that will not match the existing label file.
+
+
+STEP 3: setfit_spotify_experiment.py
+Needs: spotify_reviews_labeled_DRAFT.csv
+Command:
+python setfit_spotify_experiment.py
+What it does: trains SetFit on 16 Spotify reviews and tests on 192 reviews.
+Output:
+  spotify_experiment_results.txt       (accuracy, confusion matrix, F1)
+  spotify_experiment_errors.csv        (reviews the model got wrong)
+  spotify_experiment_predictions.csv   (prediction for every test review)
+
+
+OPTIONAL: collect_spotify_pilot.py
+Command:
+python collect_spotify_pilot.py
+What it does: the first small test (40 reviews). Not needed for the final results.
+Output: spotify_pilot_raw.csv

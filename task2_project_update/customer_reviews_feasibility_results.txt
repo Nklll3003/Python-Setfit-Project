@@ -1,0 +1,5 @@
+Dataset: SetFit/CR
+Training samples: 16
+Test samples: 376
+Evaluation metrics: {'accuracy': 0.898936170212766}
+Sample predictions: tensor([1, 0])
